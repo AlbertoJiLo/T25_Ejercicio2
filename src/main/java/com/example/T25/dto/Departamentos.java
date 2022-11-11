@@ -28,7 +28,7 @@ public class Departamentos {
 	
 	@OneToMany
 	@JoinColumn(name="departamento_id")
-	private List<Departamentos> departamento_id;
+	private List<Empleados> empleados;
 	
 	
 	//Constructores
@@ -70,18 +70,18 @@ public class Departamentos {
 	}
 	
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Departamentos")
-	public List<Departamentos> getDepartamento_id() {
-		return departamento_id;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "departamento_id")
+	public List<Empleados> getDepartamento_id() {
+		return empleados;
 	}
 
-	public void setDepartamento_id(List<Departamentos> departamento_id) {
-		this.departamento_id = departamento_id;
+	public void setDepartamento_id(List<Empleados> empleado) {
+		this.empleados = empleado;
 	}
 
 	//To string personalizado
 	@Override
 	public String toString() {
-		return "Empleado [id = " + id +", nombre = " + nombre +", presupuesto " +presupuesto+ " ] ";
+		return "Departamento [id = " + id +", nombre = " + nombre +", presupuesto " +presupuesto+ " ] ";
 	}
 }
